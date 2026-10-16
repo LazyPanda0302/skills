@@ -52,6 +52,14 @@ yarn add maplibre-gl @turf/turf
 pnpm i maplibre-gl @turf/turf
 ```
 
+The worker script is loaded from the project itself, not from a CDN. Copy it from the installed package into `public/` once:
+
+```bash
+cp node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs public/maplibre-gl-worker.mjs
+```
+
+and import `staticFile` from `remotion` in the component.
+
 Import the MapLibre CSS once in the component or an app-level stylesheet:
 
 ```ts
@@ -62,7 +70,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 
 ```tsx
 import {useEffect, useRef, useState} from 'react';
-import {useDelayRender, useVideoConfig} from 'remotion';
+import {staticFile, useDelayRender, useVideoConfig} from 'remotion';
 import * as maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
@@ -82,7 +90,7 @@ export const MyComposition = () => {
 		maplibregl.setWorkerUrl(
 			URL.createObjectURL(
 				new Blob(
-					[`import "https://unpkg.com/maplibre-gl@${maplibregl.getVersion()}/dist/maplibre-gl-worker.mjs";`],
+					[`import "${new URL(staticFile('maplibre-gl-worker.mjs'), window.location.origin).href}";`],
 					{type: 'text/javascript'},
 				),
 			),
@@ -136,6 +144,7 @@ import {
 	AbsoluteFill,
 	Easing,
 	interpolate,
+	staticFile,
 	useCurrentFrame,
 	useDelayRender,
 	useVideoConfig,
@@ -227,7 +236,7 @@ export const MyComposition = () => {
 		maplibregl.setWorkerUrl(
 			URL.createObjectURL(
 				new Blob(
-					[`import "https://unpkg.com/maplibre-gl@${maplibregl.getVersion()}/dist/maplibre-gl-worker.mjs";`],
+					[`import "${new URL(staticFile('maplibre-gl-worker.mjs'), window.location.origin).href}";`],
 					{type: 'text/javascript'},
 				),
 			),

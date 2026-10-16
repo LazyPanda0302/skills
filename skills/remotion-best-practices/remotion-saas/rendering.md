@@ -40,10 +40,10 @@ Cover these steps at a high level and link the exact docs page for the detailed 
 2. Install `@remotion/lambda` using `npx remotion add @remotion/lambda`.
 3. Create the Lambda role policy, Lambda role, IAM user, user access key, and user policy from the generated Remotion policy commands.
 4. Store credentials in `.env` using `REMOTION_AWS_ACCESS_KEY_ID` and `REMOTION_AWS_SECRET_ACCESS_KEY`; never ask the user to paste secrets into chat.
-5. Run the Lambda policy validator if the user wants to verify permissions before deploying; use the user's package manager or the command shown in the docs (`npx remotion lambda policies validate`).
+5. Run the Lambda policy validator if the user wants to verify permissions before deploying; use the user's package manager (`npx remotion lambda policies validate`).
 6. Deploy the Lambda function. Mention that functions are bound to the Remotion version and must be redeployed after Remotion upgrades.
 7. Deploy the Remotion site with a stable site name. Mention that the site must be redeployed after changing the Remotion source.
-8. Check Lambda quotas using the user's package manager or the command shown in the docs (`npx remotion lambda quotas`); new AWS accounts may need a concurrency limit increase.
+8. Check Lambda quotas using the user's package manager (`npx remotion lambda quotas`); new AWS accounts may need a concurrency limit increase.
 9. Trigger a first render, then wire render and progress endpoints using the chosen SaaS template or Node APIs.
 
 Before production, remind the user to handle rate limiting, authentication, cost controls, output privacy, render cleanup, and progress/error reporting.

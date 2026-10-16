@@ -7,7 +7,7 @@ metadata:
 
 ## Light Leaks
 
-This only works from Remotion 4.0.500 and up. Use `npx remotion versions` to check your Remotion version and `npx remotion upgrade` to upgrade your Remotion version.
+This only works from Remotion 4.0.500 and up. Use `npx remotion versions` to check your Remotion version and, if it is older, suggest upgrading to the user (see the remotion-upgrade skill; confirm the target version first).
 
 Apply `lightLeak()` from `@remotion/effects/light-leak` to a canvas-based component such as `<Solid>`. Animate `progress` from `0` to `1`; the light leak reveals during the first half and retracts during the second half.
 

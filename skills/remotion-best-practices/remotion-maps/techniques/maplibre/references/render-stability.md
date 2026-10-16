@@ -18,7 +18,7 @@ For any 2D pan/zoom:
 4. Apply the same transform to every projected HTML overlay.
 5. Continue to animate GeoJSON data and paint properties imperatively; only the renderer camera is frozen.
 
-Keep pitch and bearing constant. Use a 3D engine such as Cesium for genuine changing pitch/bearing or a terrain flythrough.
+Keep pitch and bearing constant. Genuinely changing pitch/bearing or terrain flythroughs are out of scope for these techniques.
 
 ```ts
 const baseZoom = Math.max(start.zoom, end.zoom);

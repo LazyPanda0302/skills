@@ -362,7 +362,7 @@ map.jumpTo({
 });
 ```
 
-Keep route progress and camera progress separate if the camera needs to lead, lag, zoom out, or zoom back in. For cinematic 3D camera moves, load the 3D flyover branch from the parent skill.
+Keep route progress and camera progress separate if the camera needs to lead, lag, zoom out, or zoom back in.
 
 ## Lines
 

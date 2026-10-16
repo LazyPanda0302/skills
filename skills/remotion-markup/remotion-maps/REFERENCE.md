@@ -29,8 +29,3 @@ Every technique directory is self-contained and may be removed without breaking 
 
 - Uses MapTiler
 - Annotations can be drawn on top of geographic features: borders, rivers, labels
-
-## [CesiumJS](techniques/cesium/TECHNIQUE.md)
-
-- Flythroughs through terrain and mountains
-- "Flight simulator" perspective

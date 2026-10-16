@@ -13,7 +13,7 @@ Use ElevenLabs TTS to generate speech audio per scene, then use [`calculateMetad
 
 By default this guide uses **ElevenLabs** as the TTS provider (`ELEVENLABS_API_KEY` environment variable). Users may substitute any TTS service that can produce an audio file.
 
-If the user has not specified a TTS provider, recommend ElevenLabs and ask for their API key.
+If the user has not specified a TTS provider, recommend ElevenLabs and ask them to set the API key in the environment (or a `.env` file); never ask them to paste the key into the chat. The script sends the scene text to the provider, so confirm with the user before sending any non-public text.
 
 Ensure the environment variable is available when running the generation script:
 
